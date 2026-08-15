@@ -7,18 +7,18 @@
 
 const CONFIG = {
   // Windows 10/11 Yönlendirme Linki
-  windowsUrl: 'https://github.com/example/project/releases/latest/download/Setup-win64.exe',
+  windowsUrl: 'https://pub-b3e800ba766b42fa83cfa76798c18da7.r2.dev/RyzionMC%20AFK%20Client%20Setup.exe',
   
   // Linux Dağıtım Linkleri
   linux: {
     // Debian Tabanlı (Ubuntu, Debian, Linux Mint, Pop!_OS vb.)
-    debianUrl: 'https://github.com/example/project/releases/latest/download/app-amd64.deb',
+    debianUrl: 'https://pub-b3e800ba766b42fa83cfa76798c18da7.r2.dev/ryzionmc-afk-client-amd64.deb',
     
     // Fedora Tabanlı (Fedora, RHEL, Nobara, CentOS vb.)
-    fedoraUrl: 'https://github.com/example/project/releases/latest/download/app-x86_64.rpm',
+    fedoraUrl: 'https://pub-b3e800ba766b42fa83cfa76798c18da7.r2.dev/ryzionmc-afk-client.x86_64.rpm,
     
     // Tüm Dağıtımlar / Evrensel (AppImage, Flatpak, Tarball vb.)
-    universalUrl: 'https://github.com/example/project/releases/latest/download/app-x86_64.AppImage'
+    universalUrl: 'https://pub-b3e800ba766b42fa83cfa76798c18da7.r2.dev/RyzionMC%20AFK%20Client.AppImage'
   }
 };
 
