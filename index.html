@@ -1,227 +1,208 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yönlendiriliyorsunuz...</title>
-    <!-- Otomatik Yönlendirme Metası (3 saniye sonra hedef adrese yönlendirir) -->
-    <!-- HEDEF_URL kısmını gitmek istediğiniz siteyle değiştirin -->
-    <meta http-equiv="refresh" content="3; url=https://www.mediafire.com/file/xl94z6v5gflx7ts/RyzionMC_AFK_Client_Setup_1.1.1.exe/file">
-    
-    <!-- Modern Font Yükleme -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --bg-gradient-start: #0f172a;
-            --bg-gradient-end: #020617;
-            --card-bg: rgba(30, 41, 59, 0.4);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --accent-color: #3b82f6;
-            --accent-glow: rgba(59, 130, 246, 0.5);
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Outfit', sans-serif;
-            background: radial-gradient(circle at center, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
-            color: var(--text-primary);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .container {
-            perspective: 1000px;
-            width: 100%;
-            max-width: 450px;
-            padding: 20px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid var(--card-border);
-            border-radius: 24px;
-            padding: 40px 30px;
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3),
-                        0 0 50px rgba(59, 130, 246, 0.05);
-            transform: translateY(0);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            animation: fadeIn 0.8s ease-out;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4),
-                        0 0 60px rgba(59, 130, 246, 0.1);
-        }
-
-        /* Yükleme Animasyonu */
-        .loader-wrapper {
-            position: relative;
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 30px auto;
-        }
-
-        .loader-circle {
-            width: 100%;
-            height: 100%;
-            border: 4px solid rgba(255, 255, 255, 0.05);
-            border-left-color: var(--accent-color);
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            filter: drop-shadow(0 0 8px var(--accent-glow));
-        }
-
-        .loader-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 24px;
-            color: var(--accent-color);
-            animation: pulse 1.5s ease-in-out infinite;
-        }
-
-        h1 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
-            background: linear-gradient(to right, #ffffff, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        p {
-            font-size: 15px;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 25px;
-            font-weight: 300;
-        }
-
-        .btn {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-primary);
-            text-decoration: none;
-            padding: 12px 28px;
-            border-radius: 12px;
-            font-size: 14px;
-            font-weight: 600;
-            transition: all 0.2s ease;
-        }
-
-        .btn:hover {
-            background: var(--text-primary);
-            color: var(--bg-gradient-end);
-            border-color: var(--text-primary);
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-            transform: scale(1.02);
-        }
-
-        .countdown {
-            font-weight: 600;
-            color: var(--accent-color);
-        }
-
-        /* Animasyonlar */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes spin {
-            to {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 0.6;
-                transform: translate(-50%, -50%) scale(0.95);
-            }
-            50% {
-                opacity: 1;
-                transform: translate(-50%, -50%) scale(1.05);
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İşletim Sistemi İndirme Portalı</title>
+  <meta name="description" content="Cihazınıza uygun işletim sistemi sürümünü seçin ve doğrudan indirme yapın. Windows 10/11, Debian, Fedora ve tüm Linux dağıtımları desteklenmektedir.">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="container">
-        <div class="card">
-            <!-- Görsel Yükleyici Bölümü -->
-            <div class="loader-wrapper">
-                <div class="loader-circle"></div>
-                <div class="loader-icon">➜</div>
-            </div>
+  <!-- Arka Plan Efekti -->
+  <div class="bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
 
-            <h1>Yönlendiriliyorsunuz</h1>
-            <p>
-                Lütfen bekleyin, birkaç saniye içinde güvenli bağlantıya aktarılacaksınız.
-                <br>
-                Otomatik yönlendirme süresi: <span id="timer" class="countdown">3</span> saniye.
-            </p>
+  <div class="app-container">
+    
+    <!-- Başlık Bölümü -->
+    <header class="header">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        İndirme Merkezi
+      </div>
+      <h1>İşletim Sisteminiz İçin Doğru Sürümü Seçin</h1>
+      <p>Lütfen kullandığınız işletim sistemini seçerek devam edin. Sisteminiz için en uygun yükleyiciye otomatik olarak yönlendirileceksiniz.</p>
+    </header>
 
-            <!-- Manuel Yönlendirme Butonu (Yedek Plan) -->
-            <!-- href kısmını gitmek istediğiniz siteyle değiştirin -->
-            <a href="https://www.mediafire.com/file/xl94z6v5gflx7ts/RyzionMC_AFK_Client_Setup_1.1.1.exe/file" id="redirect-link" class="btn">Hemen Git</a>
+    <!-- ADIM 1: Ana İşletim Sistemi Seçimi -->
+    <main id="view-main" class="view-section visible">
+      <div class="os-grid">
+        
+        <!-- Windows Card -->
+        <a href="#" id="btn-windows" class="card card-windows" role="button" aria-label="Windows 10/11 Seçeneği">
+          <div class="card-icon">
+            <!-- Windows SVG Icon -->
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.8"/>
+            </svg>
+          </div>
+          <h2>Windows 10 / 11</h2>
+          <p>64-bit Windows sistemleri için doğrudan kurucu (.exe / .msi) yönlendirmesi.</p>
+          <div class="card-footer">
+            <span>İndirmeyi Başlat</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
+
+        <!-- Linux Card -->
+        <a href="#" id="btn-linux" class="card card-linux" role="button" aria-label="Linux Dağıtımları Seçeneği">
+          <div class="card-icon">
+            <!-- Linux Tux SVG Icon -->
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.002 0c-2.47 0-4.484 2.115-4.484 4.708 0 1.056.326 2.03.882 2.834C6.398 8.448 5 10.457 5 12.825v4.467c0 1.258.468 2.41 1.253 3.298-.445.69-.753 1.488-.753 2.36 0 .58.47 1.05 1.05 1.05h10.898c.58 0 1.05-.47 1.05-1.05 0-.872-.308-1.67-.753-2.36C18.532 19.702 19 18.55 19 17.292v-4.467c0-2.368-1.398-4.377-3.402-5.283.556-.804.882-1.778.882-2.834C16.48 2.115 14.466 0 12.002 0zm0 1.8c1.494 0 2.684 1.298 2.684 2.908s-1.19 2.908-2.684 2.908-2.684-1.298-2.684-2.908S10.508 1.8 12.002 1.8z"/>
+            </svg>
+          </div>
+          <h2>Linux</h2>
+          <p>Debian/Ubuntu (.deb), Fedora (.rpm) veya tüm dağıtımlar için paket seçenekleri.</p>
+          <div class="card-footer">
+            <span>Dağıtım Menüsünü Aç</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </div>
+        </a>
+
+      </div>
+
+      <!-- Algılanan Sistem Bilgisi -->
+      <div style="display: flex; justify-content: center;">
+        <div class="detected-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="16" x2="12" y2="12"></line>
+            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+          </svg>
+          Tarayıcınızdan algılanan işletim sistemi: <strong id="detected-os-text">Algılanıyor...</strong>
         </div>
-    </div>
+      </div>
+    </main>
 
-    <script>
-        // Hedef URL'yi buraya yazın
-        const targetUrl = "https://www.mediafire.com/file/xl94z6v5gflx7ts/RyzionMC_AFK_Client_Setup_1.1.1.exe/file";
-        
-        // HTML elemanlarındaki linkleri güncelle
-        document.getElementById('redirect-link').href = targetUrl;
-        
-        // Meta tag güncellemesi (JS devredışıysa meta tag çalışır, aktifse JS ile geri sayım yapılır)
-        const metaTag = document.querySelector('meta[http-equiv="refresh"]');
-        if (metaTag) {
-            metaTag.setAttribute('content', `3; url=${targetUrl}`);
-        }
+    <!-- ADIM 2: Linux Dağıtımları Alt Menüsü -->
+    <section id="view-linux" class="view-section hidden">
+      <div class="step-nav">
+        <button id="btn-back" class="btn-back">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+          İşletim Sistemi Seçimine Dön
+        </button>
+        <span class="step-indicator">Linux Paket Türü Seçimi</span>
+      </div>
 
-        // Geri sayım sayacı
-        let timeLeft = 3;
-        const timerElement = document.getElementById('timer');
+      <div class="distro-grid">
         
-        const countdownInterval = setInterval(() => {
-            timeLeft--;
-            if (timerElement) {
-                timerElement.textContent = timeLeft;
-            }
-            if (timeLeft <= 0) {
-                clearInterval(countdownInterval);
-                window.location.href = targetUrl;
-            }
-        }, 1000);
-    </script>
+        <!-- Debian / Ubuntu Card -->
+        <article class="distro-card distro-debian">
+          <div class="distro-header">
+            <div class="distro-icon">
+              <!-- Debian Logo -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm1 14.5c-2.485 0-4.5-2.015-4.5-4.5s2.015-4.5 4.5-4.5 4.5 2.015 4.5 4.5-2.015 4.5-4.5 4.5z"/>
+              </svg>
+            </div>
+            <h3>Debian Tabanlı</h3>
+          </div>
+          <p>Ubuntu, Debian, Linux Mint, Pop!_OS, Zorin OS, Elementary OS ve Pardus için optimized .DEB paket dosyası.</p>
+          <div class="distro-tags">
+            <span class="tag">.deb</span>
+            <span class="tag">Ubuntu</span>
+            <span class="tag">Debian</span>
+            <span class="tag">Mint</span>
+            <span class="tag">Pardus</span>
+          </div>
+          <a id="link-debian" href="#" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+            .DEB Paketini İndir
+          </a>
+        </article>
+
+        <!-- Fedora / RHEL Card -->
+        <article class="distro-card distro-fedora">
+          <div class="distro-header">
+            <div class="distro-icon">
+              <!-- Fedora Logo -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm3.6 14.4h-2.4v2.4H9.6v-2.4H7.2V12h2.4V9.6h3.6v2.4h2.4v2.4z"/>
+              </svg>
+            </div>
+            <h3>Fedora Tabanlı</h3>
+          </div>
+          <p>Fedora, Red Hat Enterprise Linux (RHEL), Nobara, CentOS ve AlmaLinux için hazırlanmış .RPM paket dosyası.</p>
+          <div class="distro-tags">
+            <span class="tag">.rpm</span>
+            <span class="tag">Fedora</span>
+            <span class="tag">RHEL</span>
+            <span class="tag">Nobara</span>
+            <span class="tag">CentOS</span>
+          </div>
+          <a id="link-fedora" href="#" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+            .RPM Paketini İndir
+          </a>
+        </article>
+
+        <!-- Universal / All Distros Card -->
+        <article class="distro-card distro-universal">
+          <div class="distro-header">
+            <div class="distro-icon">
+              <!-- Terminal/Universal Logo -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="18" rx="2" ry="2"/>
+                <polyline points="7 8 11 12 7 16"/>
+                <line x1="13" y1="16" x2="17" y2="16"/>
+              </svg>
+            </div>
+            <h3>Tüm Dağıtımlar</h3>
+          </div>
+          <p>Arch Linux, Manjaro, openSUSE, Alpine ve diğer tüm Linux dağıtımları için evrensel AppImage / Taşınabilir Paket.</p>
+          <div class="distro-tags">
+            <span class="tag">.AppImage</span>
+            <span class="tag">Arch Linux</span>
+            <span class="tag">Manjaro</span>
+            <span class="tag">Evrensel</span>
+          </div>
+          <a id="link-universal" href="#" target="_blank" rel="noopener noreferrer" class="btn-download">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+            AppImage İndir
+          </a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Kullanıcı Kurulum Açıklaması / Bilgilendirme -->
+    <aside class="config-info">
+      <strong>⚙️ Kendi Linklerinizi Değiştirmek İçin:</strong>
+      <code>app.js</code> dosyasındaki <code>CONFIG</code> nesnesi içerisine Windows, Debian (.deb), Fedora (.rpm) ve Evrensel (.AppImage) linklerinizi yazmanız yeterlidir.
+    </aside>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>&copy; 2026 GitHub Pages İşletim Sistemi İndirme Portalı. HTML5 & Pure CSS3 ile hazırlanmıştır.</p>
+    </footer>
+
+  </div>
+
+  <!-- Custom Script -->
+  <script src="app.js"></script>
 </body>
 </html>
