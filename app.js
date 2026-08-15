@@ -14,8 +14,8 @@ const CONFIG = {
     // Debian Tabanlı (Ubuntu, Debian, Linux Mint, Pop!_OS vb.)
     debianUrl: 'https://pub-b3e800ba766b42fa83cfa76798c18da7.r2.dev/ryzionmc-afk-client-amd64.deb',
     
-    // Fedora Tabanlı (Fedora, RHEL, Nobara, CentOS vb.)
-    fedoraUrl: 'https://pub-b3e800ba766b42fa83cfa76798c18da7.r2.dev/ryzionmc-afk-client.x86_64.rpm,
+    // Fedora Tabanlı (Fedora, RHEL, Nobara, CentOS vb.) - [Tırnak hatası düzeltildi]
+    fedoraUrl: 'https://pub-b3e800ba766b42fa83cfa76798c18da7.r2.dev/ryzionmc-afk-client.x86_64.rpm',
     
     // Tüm Dağıtımlar / Evrensel (AppImage, Flatpak, Tarball vb.)
     universalUrl: 'https://pub-b3e800ba766b42fa83cfa76798c18da7.r2.dev/RyzionMC%20AFK%20Client.AppImage'
@@ -23,13 +23,9 @@ const CONFIG = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  // DOM Öğeleri
-  const mainView = document.getElementById('view-main');
-  const linuxView = document.getElementById('view-linux');
   const btnSelectWindows = document.getElementById('btn-windows');
   const btnSelectLinux = document.getElementById('btn-linux');
   const btnBack = document.getElementById('btn-back');
-  const detectedOsText = document.getElementById('detected-os-text');
 
   // Linkleri CONFIG nesnesinden dinamik olarak ata
   setupLinks();
@@ -37,20 +33,26 @@ document.addEventListener('DOMContentLoaded', () => {
   // Otomatik İşletim Sistemi Algılama
   detectUserOS();
 
-  // Etkinlik Dinleyicileri
-  btnSelectWindows.addEventListener('click', (e) => {
-    e.preventDefault();
-    handleWindowsRedirect();
-  });
+  // Etkinlik Dinleyicileri (Null kontrolleri ile güvenli hale getirildi)
+  if (btnSelectWindows) {
+    btnSelectWindows.addEventListener('click', (e) => {
+      e.preventDefault();
+      handleWindowsRedirect();
+    });
+  }
 
-  btnSelectLinux.addEventListener('click', (e) => {
-    e.preventDefault();
-    showLinuxView();
-  });
+  if (btnSelectLinux) {
+    btnSelectLinux.addEventListener('click', (e) => {
+      e.preventDefault();
+      showLinuxView();
+    });
+  }
 
-  btnBack.addEventListener('click', () => {
-    showMainView();
-  });
+  if (btnBack) {
+    btnBack.addEventListener('click', () => {
+      showMainView();
+    });
+  }
 });
 
 /**
@@ -85,14 +87,16 @@ function showLinuxView() {
   const mainView = document.getElementById('view-main');
   const linuxView = document.getElementById('view-linux');
 
-  mainView.classList.remove('visible');
-  mainView.classList.add('hidden');
+  if (mainView && linuxView) {
+    mainView.classList.remove('visible');
+    mainView.classList.add('hidden');
 
-  setTimeout(() => {
-    linuxView.classList.remove('hidden');
-    linuxView.classList.add('visible');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, 150);
+    setTimeout(() => {
+      linuxView.classList.remove('hidden');
+      linuxView.classList.add('visible');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 150);
+  }
 }
 
 /**
@@ -102,14 +106,16 @@ function showMainView() {
   const mainView = document.getElementById('view-main');
   const linuxView = document.getElementById('view-linux');
 
-  linuxView.classList.remove('visible');
-  linuxView.classList.add('hidden');
+  if (mainView && linuxView) {
+    linuxView.classList.remove('visible');
+    linuxView.classList.add('hidden');
 
-  setTimeout(() => {
-    mainView.classList.remove('hidden');
-    mainView.classList.add('visible');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  }, 150);
+    setTimeout(() => {
+      mainView.classList.remove('hidden');
+      mainView.classList.add('visible');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 150);
+  }
 }
 
 /**
